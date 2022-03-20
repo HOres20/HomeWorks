@@ -94,6 +94,10 @@ public class Main {
         System.out.println("Привет, да пребудет с тобой сила " + a);
     }
 
+    /**
+     * Вычисляем високосный год или нет
+     * @param a целое число
+     */
     private static void leapYear(int a) {
         if (a % 4 == 0 && a % 100 != 0 || a % 400 == 0) {
             System.out.println("Год високсный");
