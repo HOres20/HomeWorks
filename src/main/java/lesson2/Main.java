@@ -6,7 +6,9 @@ public class Main {
         int[] arr2 = new int[8];
         Reverse(arr1);
         printArr(arr1);
-        insertArr();
+        System.out.println();
+        insertArr(arr2);
+        printArr(arr2);
     }
 
     /**
@@ -24,16 +26,15 @@ public class Main {
         }
     }
 
-    private static void insertArr() {
-
+    /**
+     * Метод заполняющий массив значениями  0 3 6 9 12 15 18 21;
+     * @param arr
+     */
+    private static void insertArr(int[] arr) {
+    for (int i = 0; i < arr.length; i++){
+        arr[i] = i * 3;
     }
-
-
-
-
-
-
-
+    }
     /**
      * Метод выводит массив на экран
      * @param arr
