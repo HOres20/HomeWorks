@@ -1,10 +1,14 @@
 package lesson2;
 
+import java.util.Random;
+
 public class Main {
+
     public static void main(String[] args) {
         int[] arr1 = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         int[] arr2 = new int[8];
         int[] arr3 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+        int[][] arr4 = new int[4][4];
         Reverse(arr1);
         printArr(arr1);
         System.out.println();
@@ -13,6 +17,12 @@ public class Main {
         System.out.println();
         multiplicationArr(arr3);
         printArr(arr3);
+        System.out.println();
+        fillArray(arr4);
+        changeArr(arr4);
+        printArr(arr4);
+
+
     }
 
     /**
@@ -33,7 +43,7 @@ public class Main {
     /**
      * Метод заполняющий массив значениями  0 3 6 9 12 15 18 21;
      *
-     * @param arr
+     * @param arr - массив
      */
     private static void insertArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +53,7 @@ public class Main {
 
     /**
      * Метод умножает числа меньше 6 на 2, в массиве
-     * @param arr
+     * @param arr массив
      */
     private static void multiplicationArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
@@ -51,6 +61,16 @@ public class Main {
                 arr[i] = arr[i] * 2;
             }
         }
+    }
+
+    private static void fillArray(int[][] arr) {
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr.length; j++){
+                Random random = new Random();
+                arr[i][j] = random.nextInt(5);
+            }
+        }
+
     }
 
     /**
@@ -61,6 +81,38 @@ public class Main {
     private static void printArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
+        }
+    }
+
+    private static void changeArr(int[][] arr) {
+        for (int i = 0; i < arr.length; i++){
+            for (int j = 0; j < arr.length; j++){
+                if (arr[i][j] == arr[0][0]){
+                    arr[i][j] = 1;
+                }
+                else if (arr[i][j] == arr[1][1]){
+                    arr[i][j] = 1;
+                }
+                else if (arr[i][j] == arr[2][2]){
+                    arr[i][j] = 1;
+                }
+                else if (arr[i][j] == arr[3][3]){
+                    arr[i][j] = 1;
+                }
+            }
+        }
+    }
+
+    /**
+     * Перегрузка метода благодоря которой выводим на экран многомерный массив
+     * @param arr массив
+     */
+    private static void printArr(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++){
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
