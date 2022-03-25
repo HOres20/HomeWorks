@@ -63,6 +63,10 @@ public class Main {
         }
     }
 
+    /**
+     * Заполняем массив случайными числами
+     * @param arr
+     */
     private static void fillArray(int[][] arr) {
         for (int i = 0; i < arr.length; i++){
             for (int j = 0; j < arr.length; j++){
@@ -84,6 +88,10 @@ public class Main {
         }
     }
 
+    /**
+     * Ставим 1 по диагонали
+     * @param arr
+     */
     private static void changeArr(int[][] arr) {
         for (int i = 0; i < arr.length; i++){
             for (int j = 0; j < arr.length; j++){
